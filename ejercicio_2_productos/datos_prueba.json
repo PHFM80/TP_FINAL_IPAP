@@ -1,0 +1,26 @@
+
+{
+    "productos": [
+        {
+            "nombre": "Panel Solar Eco 450",
+            "marca": "EcoTech",
+            "stock": 25,
+            "potencia_w": 450,
+            "eficiencia": 21.5
+        },
+        {
+            "nombre": "Panel Solar Eco 550",
+            "marca": "GreenPower",
+            "stock": 18,
+            "potencia_w": 550,
+            "eficiencia": 22.8
+        },
+        {
+            "nombre": "Panel Solar Eco 600",
+            "marca": "SolarMax",
+            "stock": 12,
+            "potencia_w": 600,
+            "eficiencia": 23.2
+        }
+    ]
+}

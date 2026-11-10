@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Sustentabilidad - EcoTech Solutions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f7f5;
+            color: #333;
+        }
+
+        h1 {
+            color: #276749;
+        }
+
+        .resumen {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #276749;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Panel de Sustentabilidad</h1>
+    <p>EcoTech Solutions - Reporte de consumo energético</p>
+
+    <div class="resumen">
+        <h2>Emisiones totales de carbono</h2>
+        <h3>{{ total_emisiones }} kg de CO₂</h3>
+
+        <h2>Planta con mayor consumo</h2>
+        <h3>{{ planta_mayor_consumo|default:"Sin datos" }}</h3>
+    </div>
+
+    <h2>Consumo y emisiones por planta</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Planta</th>
+                <th>Consumo (kWh)</th>
+                <th>Emisiones (kg CO₂)</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for fila in filas_plantas %}
+            <tr>
+                <td>{{ fila.planta }}</td>
+                <td>{{ fila.consumo }}</td>
+                <td>{{ fila.emisiones }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No hay datos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
